@@ -28,6 +28,11 @@ body {
     margin: 0;
 
 }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /*---------------
  top-banner styles
@@ -85,12 +90,6 @@ body {
 blogs styles
 -------- */
 
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 .blogs {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -123,6 +122,75 @@ box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
     line-height: 26px;
 }
 
+/*---------------- 
+Highlights styles
+----------- */
+
+.highlight {
+    margin-top: 170px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    align-items: center;
+
+}
+.highlight-text {
+    width: 80%;
+}
+.highlight-text h2 {
+    font-size: 40px;
+}
+.highlight-text p {
+    font-size: 18px;
+    color: #6C6C6C;
+    margin-bottom: 50px;
+}
+video {
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#btn-link-2 {
+    color: var(--text-color);
+    background-color: #635555;
+    text-decoration: none;
+    padding: 10px 20px;  
+    border-radius: 5px;
+}
+
+/*-----------------
+    FAQ styles
+-------------- */
+
+.faq {
+    margin-top: 170px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 10px;
+
+}
+.faq-details {
+    width: 570px;
+}
+.faq-title p {
+    color: #6C6C6C;
+}
+.faq-ques {
+    font-size: 16px;
+}
+.faq-answers {
+    color: #6C6C6C;
+}
+.answers {
+    color: royalblue;
+}
+
 
 /*----------------- 
 footer styles
@@ -130,13 +198,13 @@ footer styles
 
 
 footer {
-    margin-top: 158px;
     text-align: center;
 }
 .footer {
     position: absolute;
     width: 884px;
     height: 213px;
+    margin-top: 158px;
     padding-bottom: 63px;
     display: flex;
     flex-direction: column;
@@ -158,3 +226,94 @@ footer {
 .copyright {
     font-size: 18px;
 }
+
+
+/* ----------------------- 
+        ------------
+        Media Queries
+        ------------
+-------------------------- */
+
+
+/*--------------
+ Mobile devices
+ --------------- */
+ 
+ @media only screen and (max-width: 688px) {
+    /* container  */
+    .container {
+         width: 100%;
+     }
+     /* top banner  */
+    .top-banner {
+        width: 100%;
+        height: 695px;
+    }
+    .top-banner-item {
+        display: flex;
+        flex-direction: column;
+        grid-row-gap: 50px;
+        justify-content: center;
+    }
+    .top-banner-title {
+        font-size: 36px;
+        width: 278px;
+        height: 148px;
+        line-height: 50px;
+    }
+    .top-banner-details #btn-link {
+        left: 19px;
+        top:280px;
+    }
+    .top-banner-image img {
+        height: 260px;
+        width: 329px;
+    }
+
+    /* blogs  */
+    .blogs {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    /* highlights */
+    .highlight {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        grid-row-gap: 60px;
+        justify-content: center;
+        align-items: center;
+    }
+    video {
+        width: 400px;
+    }
+    
+    /* FAQ */
+    .faq {
+        width: 80%;
+    }
+
+    .faq-details {
+        width: 100%;
+    }
+
+    /* footer */
+    .footer {
+        position:static;
+        width: 100%;
+        margin-top: 43px;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 187px;
+    }
+    .footer img {
+        position: static;
+        width: 271px;
+        height: 63px;
+        margin-bottom: 50px;
+    }
+    .copyright {
+        margin-top: 20px;
+    }
+  }
